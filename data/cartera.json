@@ -1,20 +1,20 @@
 [
   {
     "cliente_id": "C001",
-    "nombre": "Cliente Uno",
+    "nombre": "Manuel Quijano",
     "tipo": "B2C",
     "email": "cliente1@example.com",
-    "whatsapp": "+525500000001",
-    "telefono_fijo": "+525500000001",
-    "monto_mxn": 3450,
+    "whatsapp": "+525567042657",
+    "telefono_fijo": "+525567042657",
+    "monto_mxn": 48200,
     "fecha_vencimiento": "2026-05-11",
-    "dias_vencido": 8,
-    "antiguedad_meses": 14,
-    "historial_pago": "puntual",
-    "gestiones_previas": 0,
-    "ultima_respuesta": "",
-    "horario_preferente": "matutino",
-    "notas": "Cliente recurrente, primera vez que se atrasa"
+    "dias_vencido": 22,
+    "antiguedad_meses": 36,
+    "historial_pago": "atrasado_recurrente",
+    "gestiones_previas": 2,
+    "ultima_respuesta": "promesa_pago_rota",
+    "horario_preferente": "vespertino",
+    "notas": "Ya rompió promesa el 02-may; pago etiqueta mal en SPEI"
   },
   {
     "cliente_id": "C002",
