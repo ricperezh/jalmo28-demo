@@ -1,0 +1,122 @@
+{
+  "fecha_plan": "2026-05-21",
+  "resumen": {
+    "total_clientes": 6,
+    "email": 1,
+    "llamada": 2,
+    "revision_humana": 3
+  },
+  "acciones": [
+    {
+      "cliente_id": "C001",
+      "accion": "llamada",
+      "tono": "firme",
+      "horario_sugerido": "16:00",
+      "idempotency_key": "2026-05-21-C001",
+      "mensaje": {
+        "telefono_destino": "+52551231231",
+        "sonic_briefing": {
+          "objetivo_primario": "Obtener nueva promesa de pago con fecha y monto específicos para saldar adeudo de $48,200 MXN",
+          "objetivo_secundario": "Verificar si el pago SPEI con etiqueta incorrecta fue aplicado; aclarar estatus y evitar doble pago",
+          "contexto_cliente": "B2C, 36 meses de antigüedad, historial atrasado recurrente. 22 días vencido. Rompió promesa de pago del 02-may. Reportó pago SPEI con etiqueta mal capturada, no confirmado en sistema.",
+          "monto_adeudo": 48200,
+          "factura_referencia": "",
+          "limites": [
+            "no_ofrecer_descuento",
+            "no_amenazar_buro",
+            "no_ofrecer_condonacion",
+            "no_comprometer_plan_pago_no_autorizado"
+          ],
+          "tools_disponibles": ["verificar_pago_spei", "agendar_promesa_pago"],
+          "salida_esperada": "promesa_pago|pago_verificado|sin_acuerdo"
+        }
+      },
+      "razonamiento": "22 días vencido activa canal llamada; promesa de pago rota eleva el tono un nivel de estándar a firme conforme a política.",
+      "alertas": ["promesa_pago_rota_previa", "posible_pago_spei_sin_identificar"]
+    },
+    {
+      "cliente_id": "C002",
+      "accion": "llamada",
+      "tono": "firme",
+      "horario_sugerido": "16:00",
+      "idempotency_key": "2026-05-21-C002",
+      "mensaje": {
+        "telefono_destino": "+525513538864",
+        "sonic_briefing": {
+          "objetivo_primario": "Obtener nueva promesa de pago con fecha y monto específicos para saldar adeudo de $48,200 MXN",
+          "objetivo_secundario": "Verificar si el pago SPEI con etiqueta incorrecta fue aplicado; aclarar estatus y evitar doble pago",
+          "contexto_cliente": "B2B, 36 meses de antigüedad, historial atrasado recurrente. 22 días vencido. Rompió promesa de pago del 02-may. Reportó pago SPEI con etiqueta mal capturada, no confirmado en sistema.",
+          "monto_adeudo": 48200,
+          "factura_referencia": "",
+          "limites": [
+            "no_ofrecer_descuento",
+            "no_amenazar_buro",
+            "no_ofrecer_condonacion",
+            "no_comprometer_plan_pago_no_autorizado"
+          ],
+          "tools_disponibles": ["verificar_pago_spei", "agendar_promesa_pago"],
+          "salida_esperada": "promesa_pago|pago_verificado|sin_acuerdo"
+        }
+      },
+      "razonamiento": "22 días vencido con historial atrasado y 2 gestiones previas activa llamada; promesa rota eleva tono a firme. Monto de $48,200 es inferior al umbral B2B de $50k pero los criterios de días y gestiones previas ya justifican llamada.",
+      "alertas": ["promesa_pago_rota_previa", "posible_pago_spei_sin_identificar"]
+    },
+    {
+      "cliente_id": "C003",
+      "accion": "email",
+      "tono": "suave",
+      "horario_sugerido": "10:00",
+      "idempotency_key": "2026-05-21-C003",
+      "mensaje": {
+        "asunto": "Recordatorio amable: pago pendiente de $1,280 MXN",
+        "cuerpo": "Estimado/a Cliente Tres,\n\nEsperamos que se encuentre muy bien. Le contactamos para recordarle que tiene un saldo pendiente de $1,280 MXN con fecha de vencimiento el 16 de mayo de 2026.\n\nPuede realizar su pago de forma rápida y segura mediante transferencia SPEI o a través de cualquiera de nuestros canales de pago autorizados. Si ya realizó su pago, por favor ignor este mensaje o escríbanos para confirmarlo.\n\nSi tiene alguna pregunta o requiere asistencia, con gusto le atendemos respondiendo a este correo.\n\nGracias por su preferencia.\n\nAtentamente,\nEquipo de Cobranza",
+        "email_destino": "cliente3@example.com"
+      },
+      "razonamiento": "3 días vencido con historial nuevo y cero gestiones previas indica primer contacto; B2C con monto de $1,280 obliga a canal email sin llamada.",
+      "alertas": []
+    },
+    {
+      "cliente_id": "C004",
+      "accion": "revision_humana",
+      "tono": "prelegal",
+      "horario_sugerido": "16:00",
+      "idempotency_key": "2026-05-21-C004",
+      "mensaje": {},
+      "razonamiento": "47 días vencido con 4 gestiones previas sin respuesta supera el umbral de >45 días con gestiones agotadas; requiere evaluación humana con enfoque prelegal.",
+      "alertas": [
+        "sin_respuesta_reiterada_4_gestiones",
+        "monto_elevado_para_perfil_B2C",
+        "evaluar_incobrabilidad_o_proceso_prelegal"
+      ]
+    },
+    {
+      "cliente_id": "C005",
+      "accion": "revision_humana",
+      "tono": "suave",
+      "horario_sugerido": "11:00",
+      "idempotency_key": "2026-05-21-C005",
+      "mensaje": {},
+      "razonamiento": "ultima_respuesta es solicito_factura_revision, lo que activa la regla dura de revision_humana sin excepción; cliente VIP 5 años con historial puntual requiere atención personalizada y resolución del CFDI antes de cualquier acción de cobro.",
+      "alertas": [
+        "disputa_factura_cfdi_abierta",
+        "cliente_vip_60_meses_historial_puntual",
+        "no_automatizar_hasta_resolver_disputa"
+      ]
+    },
+    {
+      "cliente_id": "C006",
+      "accion": "revision_humana",
+      "tono": "prelegal",
+      "horario_sugerido": "10:00",
+      "idempotency_key": "2026-05-21-C006",
+      "mensaje": {},
+      "razonamiento": "62 días vencido con 5 gestiones agotadas, número que no contesta y perfil moroso superan todos los umbrales de automatización; se requiere evaluación prelegal por agente humano.",
+      "alertas": [
+        "gestiones_automatizadas_agotadas_5",
+        "numero_no_contesta",
+        "perfil_moroso",
+        "evaluar_proceso_prelegal_inmediato"
+      ]
+    }
+  ]
+}
