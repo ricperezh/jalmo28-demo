@@ -4,8 +4,8 @@
     "nombre": "Manuel Quijano",
     "tipo": "B2C",
     "email": "cliente1@example.com",
-    "whatsapp": "+525567042657a",
-    "telefono_fijo": "+525567042657a",
+    "whatsapp": "+525567042657",
+    "telefono_fijo": "+525567042657",
     "monto_mxn": 48200,
     "fecha_vencimiento": "2026-05-11",
     "dias_vencido": 22,
@@ -15,25 +15,7 @@
     "ultima_respuesta": "promesa_pago_rota",
     "horario_preferente": "vespertino",
     "notas": "Ya rompió promesa el 02-may; pago etiqueta mal en SPEI"
-  },
-  {
-    "cliente_id": "C002",
-    "nombre": "Ricardo Perez",
-    "tipo": "B2B",
-    "email": "cliente2@empresa-ejemplo.com",
-    "whatsapp": "+525513538864",
-    "telefono_fijo": "+525513538864",
-    "monto_mxn": 48200,
-    "fecha_vencimiento": "2026-05-11",
-    "dias_vencido": 22,
-    "antiguedad_meses": 36,
-    "historial_pago": "atrasado_recurrente",
-    "gestiones_previas": 2,
-    "ultima_respuesta": "promesa_pago_rota",
-    "horario_preferente": "vespertino",
-    "notas": "Ya rompió promesa el 02-may; pago etiqueta mal en SPEI"
-  },
-  {
+  },{
     "cliente_id": "C003",
     "nombre": "Rene Roldan",
     "tipo": "B2C",

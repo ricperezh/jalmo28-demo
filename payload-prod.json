@@ -14,60 +14,9 @@
       "horario_sugerido": "16:00",
       "idempotency_key": "2026-05-21-C001",
       "mensaje": {
-        "telefono_destino": "+525513538864",
-        "sonic_briefing": {
-          "objetivo_primario": "Obtener nueva promesa de pago con fecha y monto específicos para saldar adeudo de $48200 pesos mexicanos",
-          "objetivo_secundario": "Verificar si el pago SPEI con etiqueta incorrecta fue aplicado; aclarar estatus y evitar doble pago",
-          "contexto_cliente": "B2C, 36 meses de antigüedad, historial atrasado recurrente. 22 días vencido. Rompió promesa de pago del 02-may. Reportó pago SPEI con etiqueta mal capturada, no confirmado en sistema.",
-          "monto_adeudo": 48200,
-          "factura_referencia": "",
-          "limites": [
-            "no_ofrecer_descuento",
-            "no_amenazar_buro",
-            "no_ofrecer_condonacion",
-            "no_comprometer_plan_pago_no_autorizado"
-          ],
-          "tools_disponibles": ["verificar_pago_spei", "agendar_promesa_pago"],
-          "salida_esperada": "promesa_pago|pago_verificado|sin_acuerdo"
-        }
-      },
-      "razonamiento": "22 días vencido activa canal llamada; promesa de pago rota eleva el tono un nivel de estándar a firme conforme a política.",
-      "alertas": ["promesa_pago_rota_previa", "posible_pago_spei_sin_identificar"]
-    },{
-      "cliente_id": "C001",
-      "accion": "llamada",
-      "tono": "firme",
-      "horario_sugerido": "16:00",
-      "idempotency_key": "2026-05-21-C001",
-      "mensaje": {
         "telefono_destino": "+525567042657",
         "sonic_briefing": {
-          "objetivo_primario": "Obtener nueva promesa de pago con fecha y monto específicos para saldar adeudo de $48200 pesos mexicanos",
-          "objetivo_secundario": "Verificar si el pago SPEI con etiqueta incorrecta fue aplicado; aclarar estatus y evitar doble pago",
-          "contexto_cliente": "B2C, 36 meses de antigüedad, historial atrasado recurrente. 22 días vencido. Rompió promesa de pago del 02-may. Reportó pago SPEI con etiqueta mal capturada, no confirmado en sistema.",
-          "monto_adeudo": 48200,
-          "factura_referencia": "",
-          "limites": [
-            "no_ofrecer_descuento",
-            "no_amenazar_buro",
-            "no_ofrecer_condonacion",
-            "no_comprometer_plan_pago_no_autorizado"
-          ],
-          "tools_disponibles": ["verificar_pago_spei", "agendar_promesa_pago"],
-          "salida_esperada": "promesa_pago|pago_verificado|sin_acuerdo"
-        }
-      },
-      "razonamiento": "22 días vencido activa canal llamada; promesa de pago rota eleva el tono un nivel de estándar a firme conforme a política.",
-      "alertas": ["promesa_pago_rota_previa", "posible_pago_spei_sin_identificar"]
-    },{
-      "cliente_id": "C001",
-      "accion": "llamada",
-      "tono": "firme",
-      "horario_sugerido": "16:00",
-      "idempotency_key": "2026-05-21-C001",
-      "mensaje": {
-        "telefono_destino": "+525521858579",
-        "sonic_briefing": {
+          "nombre_cliente":"Rene Roldan",
           "objetivo_primario": "Obtener nueva promesa de pago con fecha y monto específicos para saldar adeudo de $48200 pesos mexicanos",
           "objetivo_secundario": "Verificar si el pago SPEI con etiqueta incorrecta fue aplicado; aclarar estatus y evitar doble pago",
           "contexto_cliente": "B2C, 36 meses de antigüedad, historial atrasado recurrente. 22 días vencido. Rompió promesa de pago del 02-may. Reportó pago SPEI con etiqueta mal capturada, no confirmado en sistema.",
